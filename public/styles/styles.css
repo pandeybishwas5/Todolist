@@ -7,3 +7,9 @@ footer {
 #heading {
     text-align: center;
 }
+
+.container{
+    position: relative;
+    text-align: center;
+}
+
