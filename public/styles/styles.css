@@ -12,4 +12,19 @@ footer {
     position: relative;
     text-align: center;
 }
+.form-group{
+    position: realtive;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+.itemlist{
+    position: relative;
+    left: 40%;
+}
+input[type=checkbox]:checked + label.strikethrough {
+    text-decoration:line-through;
+    text-decoration-color: blue;
+    text-decoration-style: double;
 
+ }
