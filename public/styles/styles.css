@@ -4,19 +4,60 @@ footer {
 
 }
 
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    margin: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 5px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
 #heading {
     text-align: center;
 }
 
-.container{
-    position: relative;
-    text-align: center;
-}
+
 .form-group{
-    position: realtive;
+
     text-align: center;
-    margin-top: 5%;
-    margin-bottom: 2%;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group-append{
+    margin-left: 5px;
+}
+
+.input-group{
+    display: flex;
+    justify-content: flex-start;
+
 }
 .itemlist{
     position: relative;
@@ -28,3 +69,29 @@ input[type=checkbox]:checked + label.strikethrough {
     text-decoration-style: double;
 
  }
+ input[type=checkbox]
+ {
+   /* Double-sized Checkboxes */
+   -ms-transform: scale(2); /* IE */
+   -moz-transform: scale(2); /* FF */
+   -webkit-transform: scale(2); /* Safari and Chrome */
+   -o-transform: scale(2); /* Opera */
+   transform: scale(2);
+   padding: 10px;
+ }
+ 
+ /* Might want to wrap a span around your checkbox text */
+ .checkboxtext
+ {
+   /* Checkbox text */
+   font-size: 110%;
+   display: inline;
+ }
+
+
+
+.custom-control-label {
+    padding-left: 10px;
+    font-size: 30px;
+}
+
