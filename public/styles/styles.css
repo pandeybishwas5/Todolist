@@ -1,8 +1,44 @@
-footer {
-    position: absolute;
-    bottom: 0;
-
+html {
+    min-height: 1000px;
+    font-family: "helvetica neue";
+    
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    min-height: 95vh;
+    background-image: -webkit-linear-gradient(65deg, #F4BF96 50%, #FCF5ED 50%);
+}
+
+main {
+    text-align: center;
+    flex: 1 0 auto;
+}
+
+h1 {
+    margin: 5px;
+}
+
+.box {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+#heading {
+    text-align: center;
+    
+}
+
+footer {
+    flex: 0 0 auto;
+    text-align: center;
+  }
 
 header {
     background-color: #333;
@@ -10,88 +46,60 @@ header {
     padding: 10px;
 }
 
-.container {
+
+
+.item {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.item:last-child {
+    border-bottom: 0;
+  }
+
+
+p {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #00204a;
+}
+
+form {
+    text-align: center;
+    margin-left: 20px;
+}
+
+input[type="text"] {
+    text-align: left;
+    height: auto;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    width: 80%;
+}
+input[type="checkbox"] {
+    margin: 20px;
+    margin-left: 0;
+}
+
+.input-group {
     display: flex;
     align-items: center;
 }
-
-h1 {
-    margin: 5px;
+  
+.input-group input,
+.input-group button {
+    margin-right: 5px; 
+    
 }
 
-nav ul {
-    list-style: none;
-    padding: 5px;
-}
-
-nav ul li {
-    display: inline;
+button.edit {
+    margin-left: 0px;
     margin-right: 20px;
+    border: none;
+    background: none;
 }
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-#heading {
-    text-align: center;
-}
-
-
-.form-group{
-
-    text-align: center;
-    margin: 20px auto;
-    max-width: 400px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.input-group-append{
-    margin-left: 5px;
-}
-
-.input-group{
-    display: flex;
-    justify-content: flex-start;
-
-}
-.itemlist{
-    position: relative;
-    left: 40%;
-}
-input[type=checkbox]:checked + label.strikethrough {
-    text-decoration:line-through;
-    text-decoration-color: blue;
-    text-decoration-style: double;
-
- }
- input[type=checkbox]
- {
-   /* Double-sized Checkboxes */
-   -ms-transform: scale(2); /* IE */
-   -moz-transform: scale(2); /* FF */
-   -webkit-transform: scale(2); /* Safari and Chrome */
-   -o-transform: scale(2); /* Opera */
-   transform: scale(2);
-   padding: 10px;
- }
- 
- /* Might want to wrap a span around your checkbox text */
- .checkboxtext
- {
-   /* Checkbox text */
-   font-size: 110%;
-   display: inline;
- }
-
-
-
-.custom-control-label {
-    padding-left: 10px;
-    font-size: 30px;
-}
-

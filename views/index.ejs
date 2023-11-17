@@ -1,6 +1,6 @@
 <%- include ("partials/header.ejs") %>
 
-<div class="container" id="heading">
+<div class="box" id="heading">
     <h1>
         <%= new Date().toLocaleString('en-US', {
             year: 'numeric',
@@ -11,30 +11,45 @@
     <small class="text-muted">My Tasks For Today</small>
 </div>
 
-<div class="form-group">
+
+
+<div class = "box">
     <form class="items" action="/submit" method="POST">
         <div class="input-group">
-            <input type="text" class="form-control" name="newItem" placeholder="New Item" autocomplete="off">
-            <div class="input-group-append">
-                <button type="submit" class="btn btn-primary">Add Task</button>
-            </div>
+            <input type="text" class="form-control" name="newItem" placeholder="New Item" autocomplete="off" autofocus="true"> 
+            <button type="submit" class="btn btn-primary">Add Task</button>
         </div>
+        
     </form>
-</div>
-
-<div class="itemlist">
-    <% if (locals.items) { %>
-        <% items.forEach((item, index) => { %>
+    <% if (locals.listItems) { %>
+        <% listItems.forEach(item => { %>
             <% if (item) { %>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" name="packersOff" value="1" id="checkbox<%= index %>" <% if (completed[index]) { %>checked<% } %>>
-                    <label class="custom-control-label strikethrough" for="checkbox<%= index %>">
-                        <%= item %>
-                    </label>
-                </div>
+            <div class = "item">
+                <form action="/delete" method="post">
+                    <input type="checkbox" onchange="this.form.submit()" name="deleteItemId" >
+                </form>
+                <p id ="title">
+                    <%= item %>
+                </p>
+                <form class="edit" action="/edit" method="post">
+                    <button id="done" class="edit" type="submit"><img class="icon"
+                        src="/assets/icons/pencil-solid.svg" alt="tick image"></button>  
+                </form>
+            </div>
             <% } %>
         <% }); %>
     <% } %>
+    
 </div>
+
+
+
+
+
+
+
+
+
+
 
 <%- include ("partials/footer.ejs") %>
