@@ -39,13 +39,22 @@ app.get("/", async (req, res) => {
 
 
 
-app.post("/submit", async (req,res) =>{
-    var item = req.body["newItem"];
-    await db.query(
-        "INSERT INTO items (title) VALUES ($1)",[item]
-      );
-      res.redirect("/");
-});
+    app.post("/submit", async (req, res) => {
+        const newItem = req.body.newItem.trim(); // Trim to remove leading/trailing spaces
+    
+        if (newItem !== '') {
+            try {
+                await db.query("INSERT INTO items (title) VALUES ($1)", [newItem]);
+                res.redirect("/");
+            } catch (err) {
+                console.log(err);
+                res.status(500).send("Error adding the task.");
+            }
+        } else {
+            // Handle empty task submission here (redirect)
+            res.redirect("/"); 
+        }
+    });
 
 app.post("/edit", async (req, res) => {
     const updatedItem = req.body.updatedItemTitle;
